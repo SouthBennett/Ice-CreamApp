@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Cream Order Form</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+
+    <script src="/js/ice-cream.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>Ice Cream Order Form</h1>
+        <form id="icecream-form" action="/confirm" method="POST">
+            <fieldset>
+                <legend>Personal Information</legend>
+
+                <div id="info">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+
+                    <span id="err-name" class="error" >Missing name</span>
+
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+
+                    <span id="err-email" class="error" >Missing Email</span>
+
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Order Details</legend>
+
+                <div id="flavordiv">
+                    <label for="flavor">Choose Your Flavor:</label>
+                    
+                    <select id="flavor" name="flavor" >
+                        <option value="none">Select a Flavor</option>
+                        <option value="vanilla">Vanilla</option>
+                        <option value="chocolate">Chocolate</option>
+                        <option value="strawberry">Strawberry</option>
+                        
+
+                    </select>
+                    <span id="err-flavor" class="error" >Please choose a flavor</span>
+                    
+
+                </div>
+
+                <div id="conediv">
+                    <label >Choose your cone</label><br>
+                    <input type="radio" id="waffle" name="method" value="waffle">
+                    <label for="waffle">Waffle Cone</label>
+
+                    <input type="radio" id="sugar" name="method" value="sugar">
+                    <label for="sugar">Sugar Cone</label>
+
+                    <input type="radio" id="cup" name="method" value="cup">
+                    <label for="cup">Cup</label><br>
+                    <span id="err-method" class="error" >Please choose a cone </span>
+
+                </div>
+
+                <div id="toppingdiv">
+                    <label >Toppings: </label><br>
+                    <input type="checkbox" id="sprinkles" name="toppings" value="sprinkles">
+                    <label for="sprinkles">Sprinkles</label>
+
+                    <input type="checkbox" id="nuts" name="toppings" value="nuts">
+                    <label for="nuts">Nuts</label>
+
+                    <input type="checkbox" id="cherry" name="toppings" value="cherry">
+                    <label for="cherry">Cherry</label>
+
+                    <input type="checkbox" id="whippedcream" name="toppings" value="whippedcream">
+                    <label for="whippedcream">Whipped Cream</label>
+                </div>
+
+                <div>
+                    <label for="comments">Additional Comments:</label><br>
+                    <textarea id="comments" name="comments"></textarea>
+                </div>
+            </fieldset>
+
+            <button type="submit" id="order">Submit Order</button>
+        </form>
+    </main>
+</body>
+</html>

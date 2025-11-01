@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You</title>
+  <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+  <main>
+    <h1>Thank you for your order</h1>
+
+    <h3>Order Summary:</h3>
+    <ul>
+      <li><strong>Name:</strong> <%= order.name %></li>
+      <li><strong>Email:</strong> <%= order.email %></li>
+      <li><strong>Flavor:</strong> <%= order.flavor %></li>
+      <li><strong>Cone:</strong> <%= order.method %></li>
+      <li><strong>Toppings:</strong> <%= Array.isArray(order.toppings) ? order.toppings.join(", ") : order.toppings %></li>
+      <li><strong>Comments:</strong> <%= order.comments %></li>
+      <li><strong>Time:</strong> <%= order.timestamp %></li>
+    </ul>
+
+    <a href="/" class="button">Place Another Order</a>
+    <a href="/admin" class="button">View All Orders</a>
+  </main>
+</body>
+</html>
