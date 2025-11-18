@@ -64,10 +64,10 @@ app.post("/confirm", async(req, res) => {
     VALUES (?, ?, ?, ?, ?);`;
 
     const params = [
-      order.customer,
+      order.name,
       order.email,
       order.flavor,
-      order.cone,
+      order.method,
       order.toppings
     ];
 
@@ -96,7 +96,7 @@ app.post("/confirm", async(req, res) => {
   }
 });
 
-app.post("/admin", async (req, res) => {
+app.get("/admin", async (req, res) => {
   try {
     //Fetch all orders from the database, newest first
     const [orders] = await pool.query('SELECT * FROM orders ORDER BY timestamp DESC');
